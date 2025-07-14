@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>পুটকি মার</title>
+  <style>
+    body {
+      font-family: 'Noto Sans Bengali', sans-serif;
+      text-align: center;
+      background: #f9f9ff;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 20px;
+    }
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: green;
+      margin: auto;
+    }
+    .counter-btn {
+      background: #4F46E5;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .counter {
+      font-size: 40px;
+      margin: 15px 0;
+      color: #4F46E5;
+    }
+    .info {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="avatar"></div>
+    <h2>এক দুই তিন চার, তারেক জিয়ার পুট*কি মার</h2>
+    <div class="counter" id="count">০</div>
+    <button class="counter-btn" onclick="increaseCount()">🚨 পুট*কি মার</button>
+    <div class="info">
+      তারেক জিয়া কে <span id="count2">০</span> বার পুট*কি মারা হয়েছে
+    </div>
+    <p style="margin-top: 15px;">
+      টিনের চালে কাউয়া, তারেক জিয়ার শাউয়া<br>
+      টিনের চালে কাউয়া, বিএনপির শাউয়া
+    </p>
+  </div>
+  <footer>
+    © SSC 26
+  </footer>
+
+  <script>
+    let count = 0;
+
+    function bnNumber(num) {
+      const bn = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+      return num.toString().split('').map(d => bn[d] || d).join('');
+    }
+
+    function increaseCount() {
+      count++;
+      document.getElementById("count").innerText = bnNumber(count);
+      document.getElementById("count2").innerText = bnNumber(count);
+    }
+  </script>
+</body>
+</html>
